@@ -14,8 +14,7 @@ This repository provides a GitHub-hosted mirror of the public
 [GNU DDD website](https://www.gnu.org/software/ddd/).
 
 Its primary purpose is to reduce traffic to `www.gnu.org` by providing a 
-publicly accessible copy through GitHub Pages. The mirror is updated
-weekly, rather than on every visitor request.
+publicly accessible copy through GitHub Pages. The mirror is updated weekly.
 
 This is an independent, unofficial mirror and is not an official GNU or Free
 Software Foundation service. For authoritative information, releases, and
