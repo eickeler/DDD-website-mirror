@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GNU DDD - Data Display Debugger - GNU Project - Free Software Foundation</title>
+
+  <meta name="description" content="Official website for GNU DDD (Data Display Debugger), the graphical front end for command-line debuggers such as GDB and CUDA-GDB.">
+  <meta name="keywords" content="GNU DDD, Data Display Debugger, debugger, GDB GUI, CUDA-GDB, graphical debugger, GNU Project">
+  <meta name="author" content="GNU Project">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="https://www.gnu.org/software/ddd/style.css" media="screen">
+  <link rel="canonical" href="https://www.gnu.org/software/ddd/">
+  <link rel="license" href="https://www.gnu.org/licenses/gpl.html">
+
+  <meta property="og:title" content="GNU DDD - Data Display Debugger">
+  <meta property="og:description" content="The official GNU DDD page. DDD is a graphical front end for command-line debuggers and can visualize data structures as graphs.">
+  <meta property="og:url" content="https://www.gnu.org/software/ddd/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GNU Project">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "GNU DDD",
+    "alternateName": "Data Display Debugger",
+    "url": "https://www.gnu.org/software/ddd/",
+    "downloadUrl": "https://ftp.gnu.org/gnu/ddd/",
+    "license": "https://www.gnu.org/licenses/gpl.html",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "GNU/Linux, Unix, macOS, POSIX",
+    "description": "GNU DDD is a graphical front end for command-line debuggers such as GDB and CUDA-GDB, with interactive data visualization.",
+    "author": {
+      "@type": "Organization",
+      "name": "GNU Project",
+      "url": "https://www.gnu.org/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Free Software Foundation",
+      "url": "https://www.fsf.org/"
+    }
+  }
+  </script>
+
+  <style>
+    body {
+      margin: 0 0 0 1.5em;
+      padding: 0;
+      background-color: #fff;
+      color: #222;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.45;
+    }
+
+    a:link { color: #1f00ff; }
+    a:visited { color: #9900dd; }
+    a:active { color: #ff0000; }
+
+    .page-header {
+      padding: 0.5rem 1rem 1rem;
+    }
+
+    .gnu-breadcrumb {
+      margin-bottom: 0.5rem;
+    }
+
+    .header-main {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus {
+      text-decoration: underline;
+    }
+
+    .screenshot-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .screenshot-strip img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    main {
+      padding: 0 1rem 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    pre.command {
+      background: #0f1720;
+      color: #d8eefe;
+      padding: 14px;
+      border-radius: 10px;
+      overflow: auto;
+      max-width: 720px;
+      font-size: 14px;
+      margin: 8px 0 0;
+    }
+
+    footer {
+      padding: 0 1rem 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="gnu-breadcrumb">
+      <small>
+        <a href="https://www.gnu.org/home.html">GNU Project</a> -
+        <a href="https://www.gnu.org/software/software.html">Software</a>
+      </small>
+    </div>
+
+    <div class="header-main">
+      <img src="https://www.gnu.org/software/ddd/dddlogo.png" alt="DDD - the Data Display Debugger" width="697" height="256" class="logo">
+      <nav class="main-nav" aria-label="Page sections">
+        <ul>
+          <li><a href="ddd.html#about">About DDD</a></li>
+          <li><a href="ddd.html#news">DDD News</a></li>
+          <li><a href="ddd.html#getting">Getting DDD</a></li>
+          <li><a href="ddd.html#binaries">DDD binaries</a></li>
+          <li><a href="ddd.html#building">Building DDD</a></li>
+          <li><a href="ddd.html#documentation">Documentation</a></li>
+          <li><a href="ddd.html#alpha">Development builds</a></li>
+          <li><a href="ddd.html#bugs">Reporting Bugs</a></li>
+          <li><a href="ddd.html#inferior">Supported debuggers</a></li>
+          <li><a href="ddd.html#assistance">Help and Assistance</a></li>
+          <li><a href="ddd.html#references">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <hr>
+
+  <main>
+    <section id="about">
+      <h2>What is DDD?</h2>
+      <p>
+        GNU DDD (Data Display Debugger) is a graphical front end for the command-line
+        debuggers <a href="https://www.gnu.org/software/gdb/">GDB</a> and
+        <a href="https://github.com/NVIDIA/cuda-gdb">CUDA-GDB</a>.
+      </p>
+      <ul>
+        <li>Interactive graphical data display (visualizing data structures as graphs)</li>
+        <li>Source-level debugging with breakpoints, watchpoints, and call stacks</li>
+        <li>Support for multiple debuggers, with active development focused on GDB and CUDA-GDB</li>
+      </ul>
+      <p>
+        The current stable version is <strong>3.4.1</strong>. For more information
+        (and more screenshots), see the <a href="manual/index.html">DDD Manual</a>.
+      </p>
+
+      <div class="screenshot-strip">
+        <a href="all.png"><img src="https://www.gnu.org/software/ddd/small-all.jpg" alt="DDD screenshot overview" width="122" height="127"></a>
+        <a href="plots.png"><img src="https://www.gnu.org/software/ddd/small-plots.jpg" alt="DDD plots view" width="121" height="126"></a>
+        <a href="settings.png"><img src="https://www.gnu.org/software/ddd/small-settings.jpg" alt="DDD debugger settings" width="121" height="127"></a>
+        <a href="registers.png"><img src="https://www.gnu.org/software/ddd/small-registers.jpg" alt="DDD registers view" width="121" height="127"></a>
+        <a href="signal.png"><img src="https://www.gnu.org/software/ddd/small-signal.jpg" alt="DDD signals view" width="121" height="127"></a>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>DDD News</h2>
+      <ul>
+        <li>
+          <strong>(2025/11/01) Switched version control from Subversion (SVN) to Git.</strong>
+          Active development now uses Git repositories on Savannah and the Git mirror on GitHub.
+        </li>
+        <li>
+          <strong>(2024/08/12) Final release of ddd-3.4.1 is available from <a href="https://ftp.gnu.org/gnu/ddd/">ftp.gnu.org</a>.</strong>
+        </li>
+        <li>
+          <strong>(2023/05/10) Final release of ddd-3.4.0 is available from <a href="https://ftp.gnu.org/gnu/ddd/">ftp.gnu.org</a>.</strong>
+        </li>
+        <li>
+          <strong>(2023/04/05) Release candidate 3.4.0-rc2 is available from <a href="https://alpha.gnu.org/gnu/ddd/">alpha.gnu.org</a>.</strong>
+          The build process of DDD is streamlined and updated to current versions of the toolchain.
+          The interfaces to inferior debuggers (GDB and remake) and to Gnuplot are updated.
+        </li>
+        <li><strong>(2021/07/30) Michael Eager and Stefan Eickeler are the new maintainers of DDD.</strong></li>
+        <li><strong>(2013/01/18) Shaunak Saha is the new maintainer of DDD.</strong></li>
+        <li>
+          <strong>(2009/02/11) DDD 3.3.12 is now available from <a href="https://ftp.gnu.org/gnu/ddd/">ftp.gnu.org</a>.</strong>
+          DDD 3.3.12 features much improved support for debugging Python, Bash and Make, as well as various bug fixes.
+        </li>
+        <li><strong><a href="news.html">Older News</a>.</strong></li>
+      </ul>
+    </section>
+
+    <section id="getting">
+      <h2>Where do I get DDD source?</h2>
+
+      <p>Official DDD source releases are available from:</p>
+      <ul>
+        <li>GNU FTP: <a href="https://ftp.gnu.org/gnu/ddd/">https://ftp.gnu.org/gnu/ddd/</a></li>
+        <li>GNU Savannah project page: <a href="https://savannah.gnu.org/projects/ddd">https://savannah.gnu.org/projects/ddd</a></li>
+      </ul>
+
+      <p>A fast Git mirror of the DDD sources is available on GitHub:</p>
+      <ul>
+        <li>Git mirror: <a href="https://github.com/eickeler/DDD">https://github.com/eickeler/DDD</a></li>
+      </ul>
+
+      <p>Automatically built development snapshots (nightly tarballs) can be downloaded from:</p>
+      <ul>
+        <li>Nightly releases: <a href="https://github.com/eickeler/DDD-workflows/releases">https://github.com/eickeler/DDD-workflows/releases</a></li>
+      </ul>
+
+      <p>The <code>ddd-&lt;version&gt;.tar.gz</code> source packages include:</p>
+      <ul>
+        <li>complete DDD source code</li>
+        <li>build instructions</li>
+        <li>the DDD manual in TeXinfo, Info, PostScript, and PDF formats</li>
+      </ul>
+    </section>
+
+    <section id="binaries">
+      <h2>Where do I get DDD binaries?</h2>
+
+      <p>
+        The FSF does not distribute DDD binaries. On many systems you can install DDD
+        from your system package manager:
+      </p>
+
+      <ul>
+        <li><strong>Fedora:</strong> <code>sudo dnf install ddd</code></li>
+        <li><strong>Arch Linux:</strong> <code>sudo pacman -S ddd</code></li>
+        <li><strong>Gentoo:</strong> <code>emerge dev-util/ddd</code></li>
+        <li><strong>GNU Guix:</strong> <code>guix install ddd</code></li>
+        <li><strong>macOS (Homebrew):</strong> <code>brew install ddd</code></li>
+        <li><strong>macOS (MacPorts):</strong> <code>sudo port install ddd</code></li>
+      </ul>
+
+      <p>For Ubuntu 24.04, a nightly DDD package is available as a <code>.deb</code> file:</p>
+      <ul>
+        <li>
+          <a href="https://github.com/eickeler/DDD-workflows/releases/download/nightly-20251106/ddd-nightly-20251106_3.4.1+git_amd64.deb">
+            ddd-nightly-20251106_3.4.1+git_amd64.deb
+          </a>
+        </li>
+      </ul>
+
+      <pre class="command">sudo dpkg -i ddd-nightly-20251106_3.4.1+git_amd64.deb
+sudo apt-get install -f</pre>
+
+      <p>
+        Recent Debian releases do not ship a current DDD package. On Debian, build from
+        source or use a compatible <code>.deb</code> from the
+        <a href="https://github.com/eickeler/DDD-workflows/releases">GitHub releases</a> page.
+      </p>
+    </section>
+
+    <section id="building">
+      <h2>What do I need to build DDD?</h2>
+
+      <p>
+        To build DDD from a released source tarball you need a working C++ toolchain,
+        the Motif toolkit, and standard X11 and POSIX development tools installed on
+        your system.
+      </p>
+
+      <p>The typical build steps are:</p>
+      <pre class="command">wget https://ftp.gnu.org/gnu/ddd/ddd-3.4.1.tar.gz
+tar -xzf ddd-3.4.1.tar.gz
+cd ddd-3.4.1
+./configure
+make
+sudo make install</pre>
+
+      <p>
+        For detailed and up-to-date information on required libraries, optional tools,
+        and platform-specific notes, please see the file <code>doc/INSTALL</code> in the
+        source distribution.
+      </p>
+    </section>
+
+    <section id="documentation">
+      <h2>How do I get started with DDD?</h2>
+
+      <p>
+        The <strong>DDD Manual</strong> contains a detailed tutorial.
+        It is available as a <a href="manual/pdf/ddd.pdf">PDF</a> or
+        <a href="manual/html_mono/ddd.html">web page</a>.
+      </p>
+
+      <p>
+        <a href="manual/pdf/ddd-paper.pdf">DDD--A Free Graphical Front-End for UNIX Debuggers</a>
+        by Andreas Zeller and Dorothea Luetkehaus, Technische Universitaet Braunschweig, Germany
+        (Informatik-Bericht No. 95-07, 7 August 1995).
+      </p>
+
+      <p>Here are some free third-party tutorials on the Web:</p>
+      <ul>
+        <li>
+          <em><a href="https://www.linux-magazin.de/">Linux Magazin</a></em>
+          has articles (in German) on debugging with
+          <a href="https://www.linux-magazin.de/heft_abo/ausgaben/2005/04/auf_der_pirsch">GDB</a>
+          and
+          <a href="https://www.linux-magazin.de/heft_abo/ausgaben/2005/04/jagdstimmung">DDD</a>.
+        </li>
+        <li>
+          <em><a href="http://www.linuxfocus.org/">LinuxFocus</a></em> has a DDD tutorial
+          in <a href="http://www.linuxfocus.org/English/January1998/article20.html">English</a>,
+          <a href="http://www.linuxfocus.org/Castellano/January1998/article20.html">Spanish</a>,
+          <a href="http://www.linuxfocus.org/Deutsch/January1998/article20.html">German</a>,
+          <a href="http://www.linuxfocus.org/Francais/January1998/article20.html">French</a>,
+          <a href="http://www.linuxfocus.org/Korean/January1998/article20.html">Korean</a>,
+          and
+          <a href="http://www.linuxfocus.org/Turkce/January1998/article20.html">Turkish</a>.
+        </li>
+      </ul>
+
+      <p>Third-party books (non-free):</p>
+      <ul>
+        <li>
+          The art of debugging with GDB, DDD, and Eclipse, Norman S. Matloff,
+          Peter Jay Salzman, No Starch Press, San Francisco, 2008
+        </li>
+      </ul>
+    </section>
+
+    <section id="alpha">
+      <h2>Development and nightly builds</h2>
+
+      <p>
+        The DDD source repository is hosted on
+        <a href="https://savannah.gnu.org/projects/ddd">GNU Savannah</a>.
+        A fast Git mirror is available at
+        <a href="https://github.com/eickeler/DDD">GitHub</a>.
+      </p>
+
+      <p>
+        Automatically built <strong>nightly snapshots</strong> (tarballs) of the development branch are
+        available from:
+      </p>
+      <ul>
+        <li><a href="https://github.com/eickeler/DDD-workflows/releases">GitHub DDD-workflows releases</a></li>
+      </ul>
+
+      <p>Official release tarballs are published at:</p>
+      <ul>
+        <li>Final releases: <a href="https://ftp.gnu.org/gnu/ddd/">https://ftp.gnu.org/gnu/ddd/</a></li>
+        <li>Historical alpha releases: <a href="https://alpha.gnu.org/gnu/ddd/">https://alpha.gnu.org/gnu/ddd/</a></li>
+      </ul>
+    </section>
+
+    <section id="bugs">
+      <h2>I have found a bug! How do I report it?</h2>
+
+      <p>
+        You can report bugs on the
+        <a href="https://savannah.gnu.org/bugs/?group=ddd">DDD bug tracker</a>.
+        Before you do this, please check the following:
+      </p>
+
+      <ul>
+        <li>
+          If you are still using DDD version 3.3.12 (more than 17 years old),
+          please first upgrade to the current stable version 3.4.1
+          (see <a href="ddd.html#getting">Where do I get DDD source?</a>)
+          and check whether the problem still occurs.
+        </li>
+        <li>
+          Please try to see whether your bug has already been reported. You can
+          <a href="https://savannah.gnu.org/bugs/?group=ddd">browse</a> or
+          <a href="https://savannah.gnu.org/bugs/?func=search&amp;group=ddd">search</a>
+          the bug tracker.
+        </li>
+        <li>
+          Please read the section “Bugs and How to Report Them” toward
+          the end of the <a href="manual/index.html">DDD Manual</a>.
+        </li>
+        <li>
+          Be sure to include a copy of your <samp>~/.ddd/log</samp> file,
+          which shows your DDD configuration as well as the interaction between
+          DDD and the underlying command-line debugger.
+        </li>
+        <li>
+          Remember, the more relevant information you put in your bug report,
+          the more likely it is to be fixed rapidly.
+        </li>
+      </ul>
+
+      <p>
+        The purpose of reporting a bug is to enable the bug to be fixed for
+        the sake of the whole community of users. You may or may not receive a
+        response; the maintainers will send one if that helps them find or
+        verify a fix. Most GNU maintainers are volunteers.
+      </p>
+
+      <p>
+        If you are willing to help fix DDD bugs, you can
+        <a href="https://mail.gnu.org/mailman/listinfo/bug-ddd/">subscribe to the bug-ddd mailing list or access its archives</a>.
+      </p>
+    </section>
+
+    <section id="assistance">
+      <h2>I have a question regarding DDD. Where do I get assistance?</h2>
+
+      <p>
+        We have a general-purpose mailing list devoted to DDD. You can ask
+        questions at <samp><a href="mailto:ddd@gnu.org">ddd@gnu.org</a></samp>.
+        Patches and new releases are also announced here.
+        <a href="https://mail.gnu.org/mailman/listinfo/ddd">Subscription info and mailing list archives</a>
+        are available. Owing to abuse by spammers, it is necessary to subscribe before posting to the list.
+      </p>
+    </section>
+
+    <section id="inferior">
+      <h2>Where can I learn more about the debuggers DDD uses?</h2>
+
+      <p>
+        As mentioned <a href="ddd.html#about">above</a>, DDD runs a number of debuggers
+        “under the hood”. One can issue commands directly to those debuggers.
+        Below are links for the primary debuggers:
+      </p>
+
+      <ul>
+        <li>GNU Debugger: <a href="https://www.gnu.org/software/gdb/"><code>gdb</code></a></li>
+        <li>CUDA-GDB: <a href="https://docs.nvidia.com/cuda/cuda-gdb/index.html"><code>cuda-gdb</code></a></li>
+      </ul>
+
+      <p><strong>Legacy / partially supported debuggers</strong></p>
+      <p>
+        DDD also contains legacy support for a number of older or less common
+        debuggers. This support is no longer actively maintained, but may still
+        work on some systems:
+      </p>
+
+      <ul>
+        <li>
+          DBX-family debuggers:
+          <a href="https://en.wikipedia.org/wiki/Dbx_(debugger)"><code>dbx</code></a>,
+          <a href="https://en.wikipedia.org/wiki/Xdb"><code>xdb</code></a>,
+          <a href="https://en.wikipedia.org/wiki/HP-UX#Debugging_tools"><code>wdb</code></a>,
+          <a href="https://en.wikipedia.org/wiki/Ladebug"><code>ladebug</code></a>
+        </li>
+        <li>
+          Java debugger:
+          <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jdb.html"><code>jdb</code></a>
+        </li>
+        <li>
+          GNU remake (make debugger):
+          <a href="https://github.com/rocky/remake"><code>remake</code></a>
+        </li>
+        <li>
+          Shell and scripting debuggers such as
+          <a href="https://bashdb.sourceforge.net/"><code>bashdb</code></a>
+          and Perl’s built-in debugger
+          (<a href="https://perldoc.perl.org/perldebug"><code>-d</code> / <code>perldebug</code></a>)
+        </li>
+      </ul>
+
+      <p>
+        For these legacy debuggers, please refer to the documentation that comes
+        with your system or distribution.
+      </p>
+    </section>
+
+    <section id="references">
+      <h2>Where can I learn more about debugging and debuggers?</h2>
+
+      <p>Here are some other related resources:</p>
+      <ul>
+        <li>
+          <cite><a href="https://motif.ics.com/">Motif</a></cite>.
+          <small>A window library needed to compile DDD.</small>
+        </li>
+        <li>
+          <cite><a href="http://www.kdbg.org/">KDbg</a></cite>.
+          <small>A KDE-based GDB interface with inspection of variable values in a tree structure.</small>
+        </li>
+        <li>
+          <cite><a href="http://www.valgrind.org/">Valgrind</a></cite>.
+          <small>No-one developing C or C++ code under Linux/x86 should be without it.</small>
+        </li>
+      </ul>
+
+      <p>Have fun with DDD!</p>
+
+      <h3>Current Maintainers</h3>
+      <ul>
+        <li>Michael Eager &lt;eager at gnu.org&gt;</li>
+        <li>Stefan Eickeler &lt;eickeler at gnu.org&gt;</li>
+      </ul>
+
+      <h3>Former Maintainers</h3>
+      <ul>
+        <li>Shaunak Saha &lt;shaunak at gnu.org&gt;</li>
+        <li>Peter Wainwright &lt;peter dot wainwright at ieee dot org&gt;</li>
+        <li>Andreas Zeller &lt;zeller at gnu.org&gt;</li>
+        <li>Andrew Gaylard &lt;apg at users dot sf dot net&gt;</li>
+        <li>Jose María Gómez Vergara &lt;josemaria at jmgv dot org&gt;</li>
+      </ul>
+    </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    <p>Return to <a href="https://www.gnu.org/home.html">GNU's home page</a>.</p>
+
+    <p>
+      Please send FSF &amp; GNU inquiries &amp; questions to
+      <a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+      There are also <a href="https://www.gnu.org/contact/">other ways to contact</a> the FSF.
+    </p>
+
+    <p>
+      Please send comments on these web pages to
+      <a href="mailto:bug-ddd@gnu.org"><em>bug-ddd@gnu.org</em></a>.
+    </p>
+
+    <p>
+      Copyright &#169; 2000-2026 Free Software Foundation, Inc.,
+      51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
+    </p>
+
+    <p>
+      Verbatim copying and distribution of this entire article is
+      permitted in any medium, provided this notice is preserved.
+    </p>
+
+    <p>
+      Updated:
+      <time datetime="2026-07-18T10:51:55Z">2026-07-18 10:51:55 UTC</time>
+    </p>
+
+    <hr>
+
+    <p>
+      <a href="https://validator.w3.org/check?uri=referer">
+        <img
+          src="https://www.w3.org/Icons/valid-html5"
+          alt="Valid HTML5"
+          height="31"
+          width="88">
+      </a>
+    </p>
+  </footer>
+</body>
+</html>

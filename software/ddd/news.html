@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+<title>DDD - Data Display Debugger - Older News</title><link rel="author" href="mailto:ddd%20at%20gnu.org">
+<link rel="StyleSheet" href="https://www.gnu.org/software/ddd/style.css" type="text/css" media="screen">
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<meta name="keywords" content="debugger debugging visualization GDB">
+<meta name="keywords" content="DDD"><style type="text/css">
+
+ body {
+  background-color: #FFFFFF;
+  color: #000000;
+ }
+ :link { color: #1F00FF }
+ :visited { color: #9900DD }
+ :active { color: #FF0000 }
+</style></head>
+
+<body>
+
+<small>
+<a href="https://www.gnu.org/home.html">GNU Project</a> - 
+<a href="https://www.gnu.org/software/software.html">Software</a>
+</small>
+
+<hr>
+
+<table summary="index" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<img src="../../graphics/dddlogo.jpg" alt="DDD - the Data Display Debugger" height="140" width="410"><br>
+</td>
+<td valign="middle">
+
+<ul>
+<li> <small class="menu"><a href="ddd.html">DDD Home</a></small>
+</li>
+</ul>
+</td></tr></tbody></table>
+
+<hr>
+
+
+<!-- end of beginning boilerplate -->
+
+<!-- Contributing author: Peter Wainwright, peter dot wainwright at ieee dot org -->
+
+<h2><a name="News">DDD News</a></h2>
+
+<ul>
+<li>
+<strong>(2023/04/05) Release candidate 3.4.0-rc2 is available from <a
+href="http://alpha.gnu.org/gnu/ddd">alpha.gnu.org</a>.</strong>
+The build process of DDD is streamlined and updated to current versions of
+the toolchain. The interfaces to inferior debuggers (GDB and remake) and to Gnuplot
+are updated.
+</li>
+<li><strong>(2021/07/30) Michael Eager and Stefan Eickeler are the new maintainers of DDD.
+</strong></li>
+<li><strong>(2013/01/18) Shaunak Saha is the new maintainer of DDD.
+</strong></li>
+<li>
+<strong>(2009/02/11) DDD 3.3.12 is now available from 
+<a href="ftp://ftp.gnu.org/gnu/ddd">ftp.gnu.org</a>.
+</strong> DDD 3.3.12 features much improved support for debugging
+Python, Bash and Make, as well as various bug fixes.
+</li>
+<li>
+<strong>(2009/02/11) Release candidate 3.3.12-rc1 is available.</strong>
+DDD can now be used effectively to debug Python, Bash and Makefiles.
+You can grab the new release candidate from
+<a href="ftp://alpha.gnu.org/gnu/ddd">alpha.gnu.org</a>.  The source tarball
+is signed with the maintainer's GPG public key, which you can download from
+<a href="http://savannah.gnu.org/project/memberlist-gpgkeys.php?group=ddd">Savannah</a>.
+</li>
+<li>
+<strong>(2008/10/22) DDD has a bug tracker on Savannah.</strong>
+The <a href="http://savannah.gnu.org/bugs/?group=ddd">bug tracker</a>
+is the best way to report bugs (use "Bugs" on the toolbar, and "Submit").
+You are encouraged to login, but you can post bug anonymously if you want.
+Posting directly to the <tt>bug-ddd</tt> mailing list is now deprecated, since the tracker
+is a much more powerful way to organise the information. Please follow the
+instructions for <a href="news.html#Bugs">bug reporting</a>.
+</li>
+<li>
+<strong>(2008/10/19) Jose Maria Gomez Vergara has handed
+maintainership of DDD to Peter Wainwright.
+</strong>
+</li>
+<li>
+<strong>(2008/06/10) CVS to Subversion conversion and move to
+Savannah site.</strong> DDD is now completely on the GNU Savannah
+site; the older SourceForge site is deprecated. Furthermore version
+control of the source code is now handled via Subversion, although Web pages
+like this one are maintained in CVS. For more details to how access it
+please visit savannah web page for instructions.&nbsp;</li><li>To
+report bugs you should use the bug track system in savannah as well.
+All other emails to the generic distribution list with errors will be
+ignored. Please, subscribe to DDD distribution list in order to be up
+to date with all about this project.&nbsp;</li><li>This web page will
+change in some days to make it more clear and
+useful.</li>
+</ul>
+<ul>
+<li>
+<strong>(2008/05/06) New plans for DDD.
+</strong>The new maintainer has communicated to the official DDD distribution list about the intention of change the GUI to a <a href="http://trolltech.com/products/" name="Qt">Qt</a>
+based interface. At the end, it seems that what is going to happens is
+that DDD will have two branches, one with a GUI based in Qt and other
+based in Gtkmm, with a common core that will be independent of the GUI.
+So, it will be possible putting any other GUI based in any other
+library. As you know <a href="http://trolltech.com/products/appdev/licensing/licensing#qt-open-source-license" name="Qt is GPL v3">Qt is GPL v3</a> licensed. 
+<br>
+<br>
+</li>
+<li>
+<strong>(2008/04/30) New maintainer found: Jose Maria Gomez Vergara.
+</strong>
+If you want to know a little more about the new maintainer you can have a look to his profile in Linkedin. <p>Following the DRY (Don't repeat yourself) he has put here a link to his professional profile at <a href="http://www.linkedin.com/in/josemariagomez">LinkedIn</a>:</p>
+</li>
+<li><strong>(2008/03/03) Seeking a new maintainer.
+</strong>
+We are officially looking for a new person to take over as maintainer of DDD.
+When I (Andrew) began doing it back in 2003, my day-job permitted me to spend a
+percentage of time on it.  That's no longer the case.  As you can see, it's
+been over two years since the last release, and I'm worried that DDD is
+suffering from this lack of attention.  So if you feel you are sufficiently (a)
+dedicated and (b) qualified to take over as maintainer, please let me know.
+Two possible projects might be of interest:
+<ul>
+	<li>
+	Add in functionality to display C++ standard containers (std::vector,
+	std::map, <i>et al</i>).  This is likely to require work on gdb too.
+	</li>
+	<li>
+	Move the DDD codebase to a modern widget-set.  Motif is quite
+	labour-intensive, which makes it unnecessarily hard to fix bugs and add
+	new features.  The fact that it's C-based means is isn't a good fit
+	when the rest of the code-base is C++.  It also doesn't match modern
+	desktop environments.  Using a modern toolkit such at gtkmm would
+	be a great improvement to DDD.  The work involved in this transition is
+	not to be underestimated.  DDD is a rich GUI app, and there is no clean
+	separation of logic between the UI and the rest of the code.
+   </li>
+</ul>
+And of course, there's the usual stream (trickle, actually) of bug fixes to
+deal with.  I estimate that you'll need to spend about 3 hours per week on
+bug-fixing and answering queries on the mailing list.  That'll increase if you
+take on one of the challenges above (or one of your own, of course).
+</li>
+<li>
+<strong>(2005/10/16) The DDD mailing list is now for subscribers only.
+</strong>
+Since I took over from Andreas as the maintainer of DDD,
+I've been trying to get admin access to the mailing list
+server web interface, in order to make the list a subscriber-only
+list.  In other words, only those subscribed to the list
+can post messages to it.
+
+I'm pleased to say that I've finally got help from the
+system admins at gnu.org, who have granted me access.
+
+So from now on, the DDD list will be a closed list.
+Anyone who wishes to discuss DDD is welcome to subscribe.
+Anyone who is a subscriber can post with no restrictions.
+
+I regret that this can't be an open list any more, but
+this is the spam-strewn world in which we live.
+</li>
+<li>
+<strong>(2005/03/16) DDD 3.3.11 is now <a href="news.html#Getting">available</a>.
+</strong> DDD-3.3.11 fixes a problem introduced in 3.3.10 which affected DBX
+users.  It also features a fix that helps when using I18N encondings.
+</li>
+<li>
+<strong>(2004/10/20) DDD 3.3.10 is now <a href="news.html#Getting">available</a>.
+</strong> DDD-3.3.10 features many, many improvements to perl-5.8.x support.
+It also provides fixes for Sun's SunONE Studio dbx, as well as some fixes
+for MacOS X.
+</li>
+<li>
+<strong>(2004/06/24) DDD 3.3.9 is now <a href="news.html#Getting">available</a>.
+</strong> DDD-3.3.9 brings support for PHP; this is largely untested, so
+feedback is most welcome.  Locating source files when using dbx now works
+automatically.  The perl version supported by DDD is now 5.8.x; unfortunately
+there remain a few wrinkles, but we're working on them.   The debugger settings
+window now starts at a larger, more reasonable size, and allows the user to
+resize it.  Several minor bugs have been fixed, memory leaks plugged, code
+cleaned up, etc.  And lastly, builds on many platforms have been improved, both
+with G++ 3.x and with various vendor compilers.  If you've had problems
+building DDD on your platform (HPUX, Cygwin, Tru64, Solaris, Irix, AIX), then
+this is the DDD version that's for you!
+</li>
+<li>
+<strong>(2003/11/10) DDD 3.3.8 is now <a href="news.html#Getting">available</a>.
+</strong> DDD 3.3.8 contains some important memory corruption fixes, and better
+interoperation with gdb-5.x, gdb-6.0, and the Perl debugger.  In addition,
+Arnaud Desitter has made literally hundreds of micro-optimisations throughout
+the codebase.  Builds on HPUX-10.20 and NetBSD are improved too.  The manual is
+now distributed in PS, PDF, and texinfo sources in the main distribution
+tarball (previously, it was a separate bundle).  DDD 3.3.8 is the fastest and
+most stable DDD yet -- I strongly recommend upgrading if you are using an
+earlier version.
+</li>
+<li>
+<strong>(2003/07/31) DDD 3.3.7 is now <a href="news.html#Getting">available</a>.
+</strong> DDD 3.3.7 brings debugging of bash scripts (together with bashdb) and
+improved conformity with ISO C++: in particular, G++-3.x is now the compiler
+recommended for DDD. G++-2.x versions will definitely not work, and will no
+longer be supported.
+</li>
+<li>
+<strong>(2003/05/15) Andreas Zeller has handed maintainership of DDD to Andrew
+Gaylard.</strong>
+</li>
+</ul>
+
+<p>Return to <a href="ddd.html">DDD's home page</a>.</p>
+<p>Return to <a href="https://www.gnu.org/home.html">GNU's home page</a>.</p>
+
+<p>
+Please send FSF &amp; GNU inquiries &amp; questions to
+<a href="mailto:gnu%20at%20gnu.org"><em>gnu at gnu.org</em></a>.
+There are also <a href="http://www.fsf.org/about/contact.html">other ways to contact</a> the FSF.
+</p>
+<p>
+Please send comments on these web pages to
+<a href="mailto:webmasters%20at%20www.gnu.org"><em>webmasters at www.gnu.org</em></a>,
+send other questions to
+<a href="mailto:gnu%20at%20gnu.org"><em>gnu at gnu.org</em></a>.
+</p>
+<p>
+Copyright &#169; 2000-2023 Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
+</p>
+<p>
+Verbatim copying and distribution of this entire article is
+permitted in any medium, provided this notice is preserved.
+</p>
+<p>
+Updated:
+<!-- timestamp start -->
+$Date: 2024/08/19 20:31:19 $ $Author: eager $
+<!-- timestamp end -->
+</p>
+<hr>
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-html401-blue"
+        alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
+</p>
+</body></html>
