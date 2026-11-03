@@ -103,13 +103,15 @@
     .screenshot-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 1.5rem;
       margin: 1rem 0;
     }
 
     .screenshot-strip img {
       max-width: 100%;
       height: auto;
+      border: 1px solid #000;
+      display: block;
     }
 
     main {
@@ -194,17 +196,20 @@
       </p>
 
       <div class="screenshot-strip">
-        <a href="all.png"><img src="small-all.jpg" alt="DDD screenshot overview" width="122" height="127"></a>
-        <a href="plots.png"><img src="small-plots.jpg" alt="DDD plots view" width="121" height="126"></a>
-        <a href="settings.png"><img src="small-settings.jpg" alt="DDD debugger settings" width="121" height="127"></a>
-        <a href="registers.png"><img src="small-registers.jpg" alt="DDD registers view" width="121" height="127"></a>
-        <a href="signal.png"><img src="small-signal.jpg" alt="DDD signals view" width="121" height="127"></a>
+        <a href="all.png"><img src="small-all.png" alt="DDD screenshot overview" width="293" height="256"></a>
+        <a href="plots.png"><img src="small-plots.png" alt="DDD plots view" width="296" height="256"></a>
+        <a href="images.png"><img src="small-images.png" alt="DDD images view" width="296" height="255"></a>
+        <a href="registers.png"><img src="small-registers.png" alt="DDD registers view" width="296" height="256"></a>
       </div>
     </section>
 
     <section id="news">
       <h2>DDD News</h2>
       <ul>
+        <li>
+          <strong>(2026/11/01) DDD 3.5.0 with a modernized GUI is in preparation.</strong>
+          The screenshots on this page show the new look of the upcoming release.
+        </li>
         <li>
           <strong>(2025/11/01) Switched version control from Subversion (SVN) to Git.</strong>
           Active development now uses Git repositories on Savannah and the Git mirror on GitHub.
@@ -221,11 +226,6 @@
           The interfaces to inferior debuggers (GDB and remake) and to Gnuplot are updated.
         </li>
         <li><strong>(2021/07/30) Michael Eager and Stefan Eickeler are the new maintainers of DDD.</strong></li>
-        <li><strong>(2013/01/18) Shaunak Saha is the new maintainer of DDD.</strong></li>
-        <li>
-          <strong>(2009/02/11) DDD 3.3.12 is now available from <a href="https://ftp.gnu.org/gnu/ddd/">ftp.gnu.org</a>.</strong>
-          DDD 3.3.12 features much improved support for debugging Python, Bash and Make, as well as various bug fixes.
-        </li>
         <li><strong><a href="news.html">Older News</a>.</strong></li>
       </ul>
     </section>
@@ -566,7 +566,7 @@ sudo make install</pre>
 
     <p>
       Updated:
-      <time datetime="2026-07-18T10:51:55Z">2026-07-18 10:51:55 UTC</time>
+      <time datetime="2026-11-1T10:51:55Z">2026-11-1 10:51:55 UTC</time>
     </p>
 
     <hr>
